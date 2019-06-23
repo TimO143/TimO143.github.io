@@ -28,8 +28,9 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
-    
-    <title>Tim Oosterlee - </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      
+    <title>Tim Oosterlee - Chatbot </title>
   </head>
   <body>
       
@@ -104,17 +105,108 @@ function topFunction() {
         <div class="jumbotron jumbotron-fluid" >
         <div class="container">
             <h1 class="display-4">Leerdoel 4 </h1>
-            <p class="lead">  </p>
+            <p class="lead">Chatbot met Machine Learning</p>
         </div>
         </div>
         <!-- Jumbotron eind-->
         <!-- Main content begin-->
         <div class="container">
                 <div class="col-md-12">
-                       
+                 <h4>Inspiratie voor dit leerdoel</h4>  
+                <p>Ik wilde een chatbot maken die een gesprek kan voeren zoals een mens dat kan en makkelijk nieuwe dingen kan leren wanneer er uitbreidingen zijn. Hierdoor ben ik gekomen op een chatbot die gebruik maakt van TensorFlow en NLTK (natural language toolkit)</p>  
+                    
+         <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+        </div>
+                    
+                <h4>Dit is hoe het werkt</h4>    
+                   Klik op de plaatjes om ze te vergroten. En klik op het kruisje of naast de afbeelding om te sluiten
+                    <br>
+                    <hr>
+                <div class="container-fluid">
+                    <h5>Voorbeeld</h5>
+                    <div class="row">   
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/chatbot.png" alt="Voorbeeld" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                        <p>Setup</p>
+                            <ul>
+                            <li>Libraries: TensorFlow en NLTK</li>
+                            <li>Python 3.6.3</li>
+                            <li>Imports: nltk 3.4.3, tflearn 0.3.2, numpy 1.16.1, tensorflow 1.13.1, json en pickle</li>    
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 1 JSON bestand aanmaken</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/json.png" alt="Part 1 JSON" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Dit JSON bestand bestaat uit verschillende intents waar de chatbot over kan praten, deze intents zijn opgedeeld uit tags, patterns en responses.<br><br> Tags zijn de overkoepelende namen om alles makkelijker op te slaan. <br><br>Patterns zijn de zinnen die de gebruiker mogelijk kan geven of een variatie daarvan (spellingsfouten zijn geen probleem bij het herkennen van deze patronen). <br><br>Als de patronen herkent worden dan wordt er uit de responses een willekeurig antwoord gekozen.<br> Het fijne aan dit bestand is dat het oneindig uitgebreid kan worden om zo menselijk mogelijk te lijken of voor andere doeleinden zoals een FAQ bot</p>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <h5>Stap 2 Pre-processing</h5>
+                    <div class="row" >
+                         <div class="col-md-12">
+                            <p>Voordat het model getraind kan worden moet uit het JSON bestand eerst de patterns ontleed worden tot de belangrijkste woorden uit de zin. <br><br>Dit gebeurt door middel van "Stemming" dit is het proces waar woorden naar hun kortste vorm worden gezet. <br><br>Bijvoorbeeld bij werkwoorden kunnen er vele vormen zijn zoals het  woord game, mensen kunnen zeggen: gaming.gamed,games. Door Stemming wordt het allemaal genormaliseerd naar game dit maakt het makkelijk om het woord terug te vinden in zinnen waar woorden in verschillende vormen voorkomen.</p>
+                        </div>
+                     
+                        </div>
+                    <hr>
+                    <h5>Stap 3 Model trainen met TensorFlow</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/model.png" alt="Part 3 Training" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            Hier gebruik ik de trainingsdata die in de vorige stap is gemaakt en met een klein neural network wordt het model gemaakt. Na 1000 keer de data hebben gelezen heeft het model ongeveer een nauwkeurigheid van 99,7%. Het trainen duurt op dit moment nog niet heel lang want het JSON bestand is nog niet heel groot.
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 4 Chatbot antwoord keuze</h5>
+                    <div class="row" >
+                        <div class="col-md-6"> 
+                            <img class='myImg' src="img/chat.png" alt="Part 4 Chatting" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>De chatbot vraagt de eerste keer dat je hem ziet om je naam en de volgende keer weet hij je naam.<br><br>
+                               Als je "bye" zegt dan stopt het gesprek om ervoor te zorgen dat er een manier is om te stoppen.<br><br>
+                            Als de gebruiker een vraag stelt dan checkt de bot voor verschillende mogelijkheden wat het onderwerp kan zijn, als het voor meer dan 70% zekerheid kan zeggen wat het onderwerp (welke tag) is dan kiest de bot de antwoorden die bij die tag horen. <br><br> Wanneer er niks te vinden is met meer dan 70% zekerheid dan haalt het de antwoorden uit een intent waar ik algemene antwoorden terug geef zoals:"Kunnen we ergens anders over praten","Sorry, mijn hobbies zijn alleen tafeltennis en actie films". <br><br>Ik ben bewust dat dit niet de beste oplossing is om een gesprek zo menselijk mogelijk te maken, maar ik wilde de gebruiker een weg wijzen wanneer de bot niet slim genoeg is om antwoorden te geven.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <h4>Reflectie</h4>
+                    <div class="col-md-12">
+                        Ik heb mijn leerdoel behaald. Door dit project heb ik ervaring opgedaan met TensorFlow, NLTK en het gebruik van JSON data uitlezen. De bot zelf werkt naar mijn mening goed genoeg voor hoeveel mogelijke antwoorden het kan geven, maar het kent nog te weinig om als echt menselijk te worden ervaren door de gebruiker.
+                    </div>                    
+                </div>  <br>
+              <div class="row">
+                    <h4>Toekomstplan</h4>
+                    <div class="col-md-12">
+                        Mogelijke toekomstplannen met deze chatbot is om het te gebruiken als een FAQ bot en te plaatsen op deze website, maar op dit moment heb ik nog geen goed plan om dit te doen.
+                    </div>                    
+                </div> 
+                
                 
 
-                    
+            
+               
                
                 
                 
@@ -236,7 +328,34 @@ function topFunction() {
       
       
       
-      
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}
+      </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
