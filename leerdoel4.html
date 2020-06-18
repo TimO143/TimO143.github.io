@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-new.css"/>
+      
+      <script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      
+    <title>Tim Oosterlee - Chatbot </title>
+  </head>
+  <body>
+      
+            <!-- Scroll to top button-->
+       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+      <!-- verschijnt rechts onderin als je kan scrollen -->
+      
+        <!-- Navigatie begin -->
+      <div class="container fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="index.html" class="navbar-brand">Tim</a>                
+              </div>
+              
+               <!--Dit zorgt voor de collapse navbar-->
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+              <ul class="navbar-nav mr-auto">
+                  
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home </a>
+      </li>
+                  
+      <li class="nav-item">
+        <a class="nav-link " href="CV.html">CV</a>
+      </li>
+       
+       <li class="nav-item">
+       <a class="nav-link" href="contact.html">Contact</a>
+       </li>
+                  
+       <li class="nav-item">
+       <a class="nav-link" href="swot.html">SWOT</a>
+       </li>
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leerdoelen
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item " href="leerdoel1.html">Leerdoel 1</a>
+          <a class="dropdown-item" href="leerdoel2.html">Leerdoel 2</a>
+          <a class="dropdown-item" href="leerdoel3.html">Leerdoel 3</a>
+          <a class="dropdown-item active" href="leerdoel4.html">Leerdoel 4 <span class="sr-only">(current)</span></a>
+        </div>          
+        </li>
+            
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Projecten
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="project1.html">Project 1</a>
+          <a class="dropdown-item" href="project2.html">Project 2</a>
+          <a class="dropdown-item" href="project3.html">Project 3</a>
+          <a class="dropdown-item" href="project4.html">Project 4</a>
+          <a class="dropdown-item" href="projectC.html">Project C</a>
+         <a class="dropdown-item" href="projectD.html">Project D</a>
+        </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ambitie.html">ambitie-plan</a>
+      </li>                
+    </ul>
+          </div>
+          </nav>
+      </div>
+            <!-- Navigatie eind-->
+      
+        <!-- Jumbotron-->
+        <div class="jumbotron jumbotron-fluid" >
+        <div class="container">
+            <h1 class="display-4">Leerdoel 4 </h1>
+            <p class="lead">Chatbot met Machine Learning</p>
+        </div>
+        </div>
+        <!-- Jumbotron eind-->
+        <!-- Main content begin-->
+        <div class="container">
+                <div class="col-md-12">
+                 <h4>Inspiratie voor dit leerdoel</h4>  
+                <p>Ik wilde een chatbot maken die een gesprek kan voeren zoals een mens dat kan en makkelijk nieuwe dingen kan leren wanneer er uitbreidingen zijn. Hierdoor ben ik gekomen op een chatbot die gebruik maakt van TensorFlow en NLTK (natural language toolkit)</p>  
+                    
+         <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+        </div>
+                    
+                <h4>Dit is hoe het werkt</h4>    
+                   Klik op de plaatjes om ze te vergroten. En klik op het kruisje of naast de afbeelding om te sluiten
+                    <br>
+                    <hr>
+                <div class="container-fluid">
+                    <h5>Voorbeeld</h5>
+                    <div class="row">   
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/chatbot.png" alt="Voorbeeld" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                        <p>Setup</p>
+                            <ul>
+                            <li>Libraries: TensorFlow en NLTK</li>
+                            <li>Python 3.6.3</li>
+                            <li>Imports: nltk 3.4.3, tflearn 0.3.2, numpy 1.16.1, tensorflow 1.13.1, json en pickle</li>    
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 1 JSON bestand aanmaken</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/json.png" alt="Part 1 JSON" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Dit JSON bestand bestaat uit verschillende intents waar de chatbot over kan praten, deze intents zijn opgedeeld uit tags, patterns en responses.<br><br> Tags zijn de overkoepelende namen om alles makkelijker op te slaan. <br><br>Patterns zijn de zinnen die de gebruiker mogelijk kan geven of een variatie daarvan (spellingsfouten zijn geen probleem bij het herkennen van deze patronen). <br><br>Als de patronen herkent worden dan wordt er uit de responses een willekeurig antwoord gekozen.<br> Het fijne aan dit bestand is dat het oneindig uitgebreid kan worden om zo menselijk mogelijk te lijken of voor andere doeleinden zoals een FAQ bot</p>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <h5>Stap 2 Pre-processing</h5>
+                    <div class="row" >
+                         <div class="col-md-12">
+                            <p>Voordat het model getraind kan worden moet uit het JSON bestand eerst de patterns ontleed worden tot de belangrijkste woorden uit de zin. <br><br>Dit gebeurt door middel van "Stemming" dit is het proces waar woorden naar hun kortste vorm worden gezet. <br><br>Bijvoorbeeld bij werkwoorden kunnen er vele vormen zijn zoals het  woord game, mensen kunnen zeggen: gaming.gamed,games. Door Stemming wordt het allemaal genormaliseerd naar game dit maakt het makkelijk om het woord terug te vinden in zinnen waar woorden in verschillende vormen voorkomen.</p>
+                        </div>
+                     
+                        </div>
+                    <hr>
+                    <h5>Stap 3 Model trainen met TensorFlow</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/model.png" alt="Part 3 Training" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            Hier gebruik ik de trainingsdata die in de vorige stap is gemaakt en met een klein neural network wordt het model gemaakt. Na 1000 keer de data hebben gelezen heeft het model ongeveer een nauwkeurigheid van 99,7%. Het trainen duurt op dit moment nog niet heel lang want het JSON bestand is nog niet heel groot.
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 4 Chatbot antwoord keuze</h5>
+                    <div class="row" >
+                        <div class="col-md-6"> 
+                            <img class='myImg' src="img/chat.png" alt="Part 4 Chatting" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>De chatbot vraagt de eerste keer dat je hem ziet om je naam en de volgende keer weet hij je naam.<br><br>
+                               Als je "bye" zegt dan stopt het gesprek om ervoor te zorgen dat er een manier is om te stoppen.<br><br>
+                            Als de gebruiker een vraag stelt dan checkt de bot voor verschillende mogelijkheden wat het onderwerp kan zijn, als het voor meer dan 70% zekerheid kan zeggen wat het onderwerp (welke tag) is dan kiest de bot de antwoorden die bij die tag horen. <br><br> Wanneer er niks te vinden is met meer dan 70% zekerheid dan haalt het de antwoorden uit een intent waar ik algemene antwoorden terug geef zoals:"Kunnen we ergens anders over praten","Sorry, mijn hobbies zijn alleen tafeltennis en actie films". <br><br>Ik ben bewust dat dit niet de beste oplossing is om een gesprek zo menselijk mogelijk te maken, maar ik wilde de gebruiker een weg wijzen wanneer de bot niet slim genoeg is om antwoorden te geven.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <h4>Reflectie</h4>
+                    <div class="col-md-12">
+                        Ik heb mijn leerdoel behaald. Door dit project heb ik ervaring opgedaan met TensorFlow, NLTK en het gebruik van JSON data uitlezen. De bot zelf werkt naar mijn mening goed genoeg voor hoeveel mogelijke antwoorden het kan geven, maar het kent nog te weinig om als echt menselijk te worden ervaren door de gebruiker.
+                    </div>                    
+                </div>  <br>
+              <div class="row">
+                    <h4>Toekomstplan</h4>
+                    <div class="col-md-12">
+                        Mogelijke toekomstplannen met deze chatbot is om het te gebruiken als een FAQ bot en te plaatsen op deze website, maar op dit moment heb ik nog geen goed plan om dit te doen.
+                    </div>                    
+                </div> 
+                
+                
+
+            
+               
+               
+                
+                
+               
+                <br><br><br>
+                
+           
+            </div>
+            
+            <!-- Main Content eind-->
+            
+        <!-- Footer begin-->
+        </div>
+        <!-- Footer -->
+<footer class="page-footer  bg-dark text-white pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Contact gegevens</h5>
+          <a href="https://www.linkedin.com/in/timoosterlee/" class="fa fa-linkedin"></a>
+           
+	
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+                        <h5 class="text-uppercase">Leerdoelen</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="leerdoel1.html">Geordend samenvatten</a>
+              </li>
+              <li>
+                <a href="leerdoel2.html">Pomodoro-techniek</a>
+              </li>
+              <li>
+                <a href="leerdoel3.html">OpenCV-Road detection</a>
+              </li>
+              <li>
+                <a href="leerdoel4.html">Chatbot met Machine Learning</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Projecten</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="project1.html">Scrum</a>
+              </li>
+              <li>
+                <a href="project2.html">Pygame</a>
+              </li>
+              <li>
+                <a href="project3.html">Windows Forms</a>
+              </li>
+              <li>
+                <a href="project4.html">Mobiele App</a>
+              </li>
+              <li>
+                <a href="projectC.html">Webshop</a>
+              </li>
+              <li>
+                <a href="projectD.html">Face recognition</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Tim Oosterlee:
+            <a href="https://github.com/TimO143"> Github</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+        <!-- Footer eind-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" type="text/css" href="css/stylesheet-new.css"/>
+      
+      <script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <title>Tim Oosterlee - OpenCV</title>
+  </head>
+  <body>
+      
+            <!-- Scroll to top button-->
+       <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+      <!-- verschijnt rechts onderin als je kan scrollen -->
+      
+        <!-- Navigatie begin -->
+      <div class="container fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="index.html" class="navbar-brand">Tim</a>                
+              </div>
+    
+              <!--Dit zorgt voor de collapse navbar-->
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  
+              <ul class="navbar-nav mr-auto">
+                  
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home </a>
+      </li>
+                  
+      <li class="nav-item">
+        <a class="nav-link " href="CV.html">CV</a>
+      </li>
+       
+       <li class="nav-item">
+       <a class="nav-link" href="contact.html">Contact</a>
+       </li>
+                  
+       <li class="nav-item">
+       <a class="nav-link" href="swot.html">SWOT</a>
+       </li>
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leerdoelen
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item " href="leerdoel1.html">Leerdoel 1</a>
+          <a class="dropdown-item" href="leerdoel2.html">Leerdoel 2</a>
+          <a class="dropdown-item active" href="leerdoel3.html">Leerdoel 3<span class="sr-only">(current)</span></a>
+          <a class="dropdown-item" href="leerdoel4.html">Leerdoel 4</a>
+        </div>          
+        </li>
+            
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Projecten
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="project1.html">Project 1</a>
+          <a class="dropdown-item" href="project2.html">Project 2</a>
+          <a class="dropdown-item" href="project3.html">Project 3</a>
+          <a class="dropdown-item" href="project4.html">Project 4</a>
+          <a class="dropdown-item" href="projectC.html">Project C</a>
+         <a class="dropdown-item" href="projectD.html">Project D</a>
+        </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ambitie.html">ambitie-plan</a>
+      </li>                  
+    </ul>
+          </div>
+          </nav>
+      </div>
+            <!-- Navigatie eind-->
+      
+        <!-- Jumbotron-->
+        <div class="jumbotron jumbotron-fluid" >
+        <div class="container">
+            <h1 class="display-4">Leerdoel 3 </h1>
+            <p class="lead"> OpenCV verkennen - Road Vision (Image Processing) </p>
+        </div>
+        </div>
+        <!-- Jumbotron eind-->
+        <!-- Main content begin-->
+        <div class="container">
+                <div class="col-md-12">
+                <h4>Inspiratie voor dit leerdoel</h4>  
+                <p>Ik wilde iets gaan doen met Machine Learning en keek wat rond op internet. Ik zag wat Machine Learning toegepast samen met Computer Vision en wilde dit onderwerp verder bekijken. Daarom heb ik een project gemaakt om de lijnen van een snelweg te laten bijhouden door de computer op een afbeelding en een video.</p>  
+                    
+         <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- The Close Button -->
+          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01">
+
+          <!-- Modal Caption (Image Text) -->
+          <div id="caption"></div>
+        </div>
+                    
+                <h4>Dit is hoe het in stappen gemaakt is</h4>    
+                   Klik op de plaatjes om ze te vergroten. En klik op het kruisje of naast de afbeelding om te sluiten
+                    <br>
+                    <hr>
+                <div class="container-fluid">
+                    <h5>Stap 1 Voorbereiding</h5>
+                    <div class="row">   
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/1.Start_of_CV_project.png" alt="Part 1 Setup" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                        <p>Voor het voorbereiden heb ik een afbeelding van internet gepakt om mee te werken. Ik gebruik:</p>
+                            <ul>
+                            <li>'Atom' als tekst-editor</li>
+                            <li>Python 3.7</li>
+                            <li>Libraries: Numpy, cv2, matplotlib.pyplot</li>    
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 2 Omzetten naar een grijze afbeelding</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/2.Gray_scale.png" alt="Part 2 Gray Scale" width="300" height="200">
+                        </div>
+                        <div class="col-md-3">
+                            <p>Elke afbeelding bestaat uit een array van pixels met waarde van 0 tot 255 een grijze afbeelding bestaat uit alleen maar pixels met een waarde van 255 zoals hiernaast te zien is als voorbeeld. Over dit plaatje wordt een Gaussian Blur toe gepast om de 'noise' te verminderen zodat er kleine veranderingen zijn in intensiteit van licht.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img class='myImg' src="img/2.1.%20Gray_Bitwise.png" alt="Part 2 Gray Scale" width="300" height="200">
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 3 Contrast lijnen</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/3.Canny_Edges.png" alt="Part 3 Canny Edges" width="300" height="200">
+                        </div>
+                        <div class="col-md-3">
+                            <p>Je kan dit plaatje ook zien als een matrix(2D) met x en y. Als je het plaatje ziet als een functie van x en y vb. f(x,y) dan kan je hier de afgeleide van nemen om het gradiënt(intensiteit van de kleur) te bepalen en zo de randen ofwel 'edges' van een afbeelding te bepalen aan de hand van de grootste variatie in gradiënt zoals te zien is in figuur hiernaast.</p>
+                        </div>
+                     
+                        </div>
+                    <hr>
+                    <h5>Stap 4 Plotten in een grafiek</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/4.pyplot_Xas_Yas.png" alt="Part 4 Pyplot" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            Hier kijk ik in de afbeelding de precieze afmeting van het gebied wat ik wil zien.
+                        </div>
+                    </div>
+                    <hr>
+                    <h5>Stap 5 Voorbereiding uitsnede</h5>
+                    <div class="row" >
+                        <div class="col-md-6"> 
+                            <img class='myImg' src="img/5.Polygon_triangle_Road.png" alt="Part 5 Triangle view" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Door middel van binaire getallen wiskunde te gebruiken waarbij 255 wordt gerepresenteerd door 11111111  en 0 wordt gerepresenteerd door 00000000. Als je hiervan de Bitwise-AND neemt van figuur uit stap 3 en figuur uit stap 5 dan krijg je een masker waarbij alleen het stukje van afbeelding in stap 6 overblijft. <br> Bitwise-And ->( 11110000 (afbeelding uit stap 5) & 11111111 (afbeelding uit stap 3) = 11110000  ) </p>
+                        </div>
+                       <div class="col-md-4" style='margin-top: 10px;'>
+                           <img class='myImg' src="img/5.1.Triangle_Bitwise.png" alt="Part 5 Matrix in pixels" width="300" height="200">
+                        </div>
+                      <div class="col-md-6" style='margin-top: 10px;'>
+                        <img class='myImg' src="img/5.2.Triangle_BitwiseOperation.png" alt="Part 5 Bitwise representation" width="300" height="200">
+                      </div> 
+                    
+                    </div>
+                    <hr>
+                    <h5>Stap 6 uitsnede van afbeelding</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                         <img class='myImg' src="img/6.Cropped_Image.png" alt="Part 6 Cropped image" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p> Door de operatie die in de vorige stap is gedaan is het het resultaat voor het interesse gebied wat ik wilde krijgen. Waar nu verder mee gewerkt kan worden.</p>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    <h5>Stap 7 Interesse gebied</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                             <img class='myImg' src="img/7.Road_lines.png" alt="Part 7 Road lines (rough)" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Om rechte lijnen uit de afbeelding te halen is er een techniek die heet "Hough transform". Het zoekt de beste lijn waar de meeste punten doorheen gaan. In het plaatje zijn dat de lijnen van de weg. </p>
+                        </div>
+                   </div>
+                    <hr>
+                    <h5>Stap 8 Interesse gebied verwerkt in afbeelding</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                         <img class='myImg' src="img/8.Identified_Road_lines.png" alt="Part 8 Real Road lines" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p> Dit is het resultaat van het uitvoeren van de "Hough transform" </p>
+                        </div>
+                       
+                    </div>
+                    <hr>
+                    <h5>Stap 9 Afwerken van de lijn</h5>
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <img class='myImg' src="img/9.Smoother_Line.png" alt="Part 9 Smoother Lines" width="300" height="200">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Dit is een kleine optimalisatie om de lijn rechter te maken.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="col-md-12">
+                    <p>Als laatste heb ik gekeken naar hoe ver ik kon komen met dit te verwerken in een video. wat een stuk lastiger was omdat ik in essentie van een afbeelding heb bepaald waar de lijnen zich bevinden dus de video gaat niet heel ver. Hieronder is het resultaat te zien.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zdaQCWQ3P6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>    
+                <hr>
+                <h4>Reflectie</h4>
+                    <p>Ik heb mijn leerdoel behaald. Door dit project ben ik meer te weten gekomen van hoeveel wiskunde er zit om dit te laten werken. Zonder youtube en internet zou dit een stuk lastiger zijn geweest. Dit was alleen maar computer vision deel wat handig is voor Machine Learning. En ik zou graag meer te weten willen komen over andere Machine Learning gebieden</p>    
+
+            
+               
+               
+                
+                
+               
+                <br><br><br>
+                
+           
+            </div>
+            
+            <!-- Main Content eind-->
+            
+        <!-- Footer begin-->
+        </div>
+        <!-- Footer -->
+<footer class="page-footer  bg-dark text-white pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Contact gegevens</h5>
+          <a href="https://www.linkedin.com/in/timoosterlee/" class="fa fa-linkedin"></a>
+           
+	
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+                        <h5 class="text-uppercase">Leerdoelen</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="leerdoel1.html">Geordend samenvatten</a>
+              </li>
+              <li>
+                <a href="leerdoel2.html">Pomodoro-techniek</a>
+              </li>
+              <li>
+                <a href="leerdoel3.html">OpenCV-Road detection</a>
+              </li>
+              <li>
+                <a href="leerdoel4.html">Chatbot met Machine Learning</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Projecten</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="project1.html">Scrum</a>
+              </li>
+              <li>
+                <a href="project2.html">Pygame</a>
+              </li>
+              <li>
+                <a href="project3.html">Windows Forms</a>
+              </li>
+              <li>
+                <a href="project4.html">Mobiele App</a>
+              </li>
+              <li>
+                <a href="projectC.html">Webshop</a>
+              </li>
+              <li>
+                <a href="projectD.html">Face recognition</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Tim Oosterlee:
+            <a href="https://github.com/TimO143"> Github</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+        <!-- Footer eind-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event){
+    if (event.target == modal){
+        modal.style.display = "none";
+    }
+}
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
